@@ -1,0 +1,200 @@
+/* ===== สไตล์รวมของระบบสั่งอาหาร — plain CSS โทนกรม/ฟ้า/แดง (ชุดเดียวกับทั้ง workshop) ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', 'Leelawadee UI', 'Noto Sans Thai', sans-serif;
+  background: #F8FAFC;
+  color: #1E293B;
+  line-height: 1.6;
+}
+
+.container { max-width: 860px; margin: 0 auto; padding: 0 1.2rem; }
+
+/* ===== header ===== */
+.site-header {
+  background: #1E3A8A;
+  color: #fff;
+  border-bottom: 4px solid #38BDF8;
+}
+.header-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 1rem 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.site-title { font-size: 1.15rem; }
+
+.nav { display: flex; gap: 1rem; font-size: 0.92rem; }
+.nav a { color: #fff; text-decoration: none; opacity: 0.9; }
+.nav a:hover { opacity: 1; text-decoration: underline; }
+
+main.container { padding-top: 1.6rem; padding-bottom: 3rem; }
+
+/* ===== หัวข้อ / กล่องทั่วไป ===== */
+.page-title { font-size: 1.45rem; color: #1E3A8A; margin-bottom: 0.6rem; }
+.section-title { font-size: 1.05rem; color: #1E3A8A; margin-bottom: 0.6rem; }
+.panel {
+  background: #fff;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 1.1rem 1.2rem;
+  margin-bottom: 1.4rem;
+}
+.muted { color: #64748B; font-size: 0.9rem; }
+
+.home-menu { list-style: none; }
+.home-menu li { margin: 0.35rem 0; }
+.home-menu a { color: #1E3A8A; font-weight: 600; text-decoration: none; }
+.home-menu a:hover { color: #38BDF8; text-decoration: underline; }
+
+/* ===== ปุ่ม ===== */
+.btn {
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 0.55rem 1.1rem;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.btn-primary { background: #1E3A8A; color: #fff; }
+.btn-primary:hover { background: #38BDF8; }
+.btn-primary:disabled { background: #94A3B8; cursor: not-allowed; }
+.btn-danger { background: #fff; color: #DC2626; border: 1px solid #FECACA; }
+.btn-danger:hover { background: #FEF2F2; }
+.btn-qty {
+  width: 30px; height: 30px;
+  border-radius: 8px;
+  border: 1px solid #CBD5E1;
+  background: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1E3A8A;
+  cursor: pointer;
+}
+.btn-qty:hover { background: #EAF2FB; }
+
+/* ===== ฟอร์ม ===== */
+.form-row { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+.input, .select {
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid #CBD5E1;
+  border-radius: 8px;
+  background: #fff;
+  color: #1E293B;
+}
+.input:focus, .select:focus {
+  outline: none;
+  border-color: #38BDF8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.18);
+}
+
+/* ===== การ์ดเมนูอาหาร ===== */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 0.9rem;
+}
+.menu-card {
+  background: #fff;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.menu-name { font-size: 0.98rem; color: #1E293B; }
+.menu-price { color: #1E3A8A; font-weight: 700; }
+.menu-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.qty-in-cart { min-width: 2ch; text-align: center; font-weight: 700; color: #1E3A8A; }
+
+/* ===== แถบตะกร้า ===== */
+.cart-bar {
+  position: sticky;
+  bottom: 0.8rem;
+  background: #1E3A8A;
+  color: #fff;
+  border-radius: 12px;
+  padding: 0.9rem 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.25);
+  margin-top: 1.4rem;
+}
+.cart-info { flex: 1; min-width: 180px; font-size: 0.95rem; }
+.cart-total { font-weight: 700; }
+.cart-bar .select { border: none; }
+.flash {
+  background: #ECFDF5;
+  border-left: 4px solid #059669;
+  color: #065F46;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  margin: 0.8rem 0;
+  font-size: 0.92rem;
+}
+
+/* ===== ตาราง ===== */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  overflow: hidden;
+  font-size: 0.92rem;
+}
+.data-table th {
+  background: #EAF2FB;
+  color: #1E3A8A;
+  text-align: left;
+  padding: 0.6rem 0.9rem;
+}
+.data-table td {
+  padding: 0.55rem 0.9rem;
+  border-top: 1px solid #F1F5F9;
+}
+.td-center { text-align: center; }
+.td-right { text-align: right; }
+.td-muted { color: #64748B; }
+.empty-row { text-align: center; color: #94A3B8; padding: 1.4rem !important; }
+
+/* ===== การ์ดสรุปบน dashboard ===== */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.9rem;
+  margin-bottom: 1.4rem;
+}
+.stat-card {
+  background: #fff;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+}
+.stat-label { font-size: 0.85rem; color: #64748B; }
+.stat-value { font-size: 1.5rem; font-weight: 700; color: #1E3A8A; }
+
+/* ===== ข้อความเตือน ===== */
+.warn {
+  color: #DC2626;
+  background: #FEF2F2;
+  border-left: 4px solid #DC2626;
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+}
