@@ -69,3 +69,35 @@ export async function getPurchaseSummaryRows() {
   if (error) throw error;
   return data || [];
 }
+
+// ดึงข้อมูลพร้อม filter วันที่ (dateFrom/dateTo เป็น ISO string หรือ undefined)
+export async function getPurchaseSummaryRowsFiltered({ dateFrom, dateTo } = {}) {
+  let query = supabase
+    .from("purchases")
+    .select("product_name, quantity, total, table_number, created_at");
+  if (dateFrom) query = query.gte("created_at", dateFrom);
+  if (dateTo)   query = query.lte("created_at", dateTo);
+  const { data, error } = await query;
+  if (error) throw error;
+  return data || [];
+}
+
+// ยอดขายรายวัน (สำหรับกราฟ) — กลับ array [{date, revenue}] เรียงตามวันที่
+export async function getDailyRevenue({ dateFrom, dateTo } = {}) {
+  let query = supabase
+    .from("purchases")
+    .select("created_at, total");
+  if (dateFrom) query = query.gte("created_at", dateFrom);
+  if (dateTo)   query = query.lte("created_at", dateTo);
+  const { data, error } = await query;
+  if (error) throw error;
+  const rows = data || [];
+  const byDay = {};
+  for (const r of rows) {
+    const day = r.created_at ? r.created_at.slice(0, 10) : "unknown";
+    byDay[day] = (byDay[day] || 0) + Number(r.total);
+  }
+  return Object.entries(byDay)
+    .map(([date, revenue]) => ({ date, revenue }))
+    .sort((a, b) => a.date.localeCompare(b.date));
+}

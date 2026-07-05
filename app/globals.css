@@ -198,3 +198,136 @@ main.container { padding-top: 1.6rem; padding-bottom: 3rem; }
   border-radius: 8px;
   padding: 0.7rem 1rem;
 }
+
+/* ===== Dashboard: header ===== */
+.dash-header {
+  margin-bottom: 1.2rem;
+}
+
+/* ===== Dashboard: date filter ===== */
+.date-filter-bar {
+  background: #fff;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 0.85rem 1.2rem;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.date-filter-label {
+  font-weight: 600;
+  color: #1E3A8A;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+.date-filter-inputs {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+.date-field {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.88rem;
+  color: #64748B;
+}
+.date-input {
+  padding: 0.38rem 0.65rem;
+  font-size: 0.9rem;
+}
+.date-sep {
+  color: #94A3B8;
+  font-weight: 600;
+}
+.btn-outline-sm {
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid #CBD5E1;
+  border-radius: 8px;
+  padding: 0.38rem 0.85rem;
+  cursor: pointer;
+  background: #F8FAFC;
+  color: #475569;
+  transition: all 0.15s;
+}
+.btn-outline-sm:hover {
+  background: #EFF6FF;
+  border-color: #38BDF8;
+  color: #1E3A8A;
+}
+
+/* ===== Dashboard: 3-col stat grid ===== */
+.stat-grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* ===== Dashboard: stat card v2 ===== */
+.stat-card-v2 {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  border-left: 4px solid var(--accent, #1E3A8A);
+  padding: 1rem 1.1rem;
+}
+.stat-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+/* ===== Dashboard: chart tooltip ===== */
+.chart-tooltip {
+  background: #1E293B;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.5rem 0.85rem;
+  font-size: 0.88rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+.chart-tooltip-label { color: #94A3B8; margin-bottom: 2px; }
+.chart-tooltip-value { font-weight: 700; font-size: 1rem; }
+
+/* ===== Dashboard: best seller table enhancements ===== */
+.best-row { background: #FFFBEB; }
+.rank-cell { font-size: 1.15rem; }
+.menu-name-text { font-weight: 600; color: #1E293B; }
+.badge-hot {
+  display: inline-block;
+  margin-left: 0.4rem;
+  background: #FEF3C7;
+  color: #D97706;
+  border: 1px solid #FDE68A;
+  border-radius: 4px;
+  padding: 0 0.35rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  vertical-align: middle;
+}
+.dishes-bar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+}
+.dishes-bar {
+  width: 80px;
+  height: 8px;
+  background: #E2E8F0;
+  border-radius: 99px;
+  overflow: hidden;
+}
+.dishes-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #38BDF8, #1E3A8A);
+  border-radius: 99px;
+  transition: width 0.4s ease;
+}
+.revenue-cell {
+  font-weight: 600;
+  color: #059669;
+}
+
